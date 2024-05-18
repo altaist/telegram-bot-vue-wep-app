@@ -18,10 +18,10 @@ import logging
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, WebAppInfo
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, CallbackContext
 
-TOKEN = 'yourbottoken'
-URL = 'https://mboretto.github.io/telegram-bot-vue-wep-app/'
+TOKEN = '6631895320:AAE8noQdLXyWouOk6odHCp4hrnRKBlk2Y6U'
+URL = 'https://altaist.github.io/telegram-bot-vue-wep-app/'
 # This have to be configured with botfather
-BOT_FATHER_URL = 't.me/yourbot/appname'
+BOT_FATHER_URL = 'https://t.me/altaist_webapp_bot/myapp'
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
@@ -58,7 +58,7 @@ def help_command(update: Update, context: CallbackContext) -> None:
 def main() -> None:
     """Run the bot."""
     # Create the Updater and pass it your bot's token.
-    updater = Updater(TOKEN)
+    updater = Updater(TOKEN, use_context=True)
 
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CallbackQueryHandler(button))
